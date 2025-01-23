@@ -14,7 +14,7 @@ namespace ShoppingCart12.Models
         public string Author { get; set; }
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
-        [ForeignKey("CategoryID")]
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
     }
 }
