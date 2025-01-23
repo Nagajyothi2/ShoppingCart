@@ -29,7 +29,7 @@ namespace ShoppingCart12.Repository
                 query = dbSet.AsNoTracking();
             }
             query = query.Where(filter);
-            if (string.IsNullOrEmpty(includeProperties))
+            if (!string.IsNullOrEmpty(includeProperties))
             {
                 foreach (var property in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
@@ -46,9 +46,9 @@ namespace ShoppingCart12.Repository
             {
                 query = query.Where(filter);
             }
-            if(string.IsNullOrEmpty(includeProperties))
+            if(!string.IsNullOrEmpty(includeProperties))
             {
-                foreach(var property in includeProperties.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var property in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     query = query.Include(property);
                 }
